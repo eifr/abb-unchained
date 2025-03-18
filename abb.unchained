@@ -9,7 +9,7 @@
     "all": "audio books"
   },
   "search": {
-    "no_category": "${url}/page/${page}/?s=${query}",
+    "no_category": "${url}/page/${page}/?s=${query}"
   },
   "download": {
     "regexes": {
@@ -24,8 +24,7 @@
             "other": "magnet:?xt=urn:btih:"
           }
         ]
-      },
-
+      }
     }
   }
 }
