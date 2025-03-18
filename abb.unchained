@@ -3,36 +3,22 @@
   "version": 2.0,
   "url": "https://audiobookbay.lu/",
   "name": "audiobookbay",
+  "author": "eifr",
   "description": "Parser for audiobookbay",
   "supported_categories": {
-    "all": "all",
-    "anime": "Anime",
-    "software": "Applications",
-    "games": "Games",
-    "movies": "Movies",
-    "music": "Music",
-    "tv": "TV"
+    "all": "audio books"
   },
   "search": {
-    "category": "${url}/page/${page}/?s=${query}&cat=${category}",
-    "no_category": "${url}/page/${page}/?s=${query}",
-    "page_start": 1
+    "no_category": "${url}/?s=${query}"
   },
   "download": {
     "regexes": {
-
       "magnet": {
-        "regex_use": "all",
-        "regexps": [
-          {
-            "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
-            "group": 1,
-            "slug_type": "append_other",
-            "other": "magnet:?xt=urn:btih:"
-          }
-        ]
-      },
-
+        "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
+        "group": 1,
+        "slug_type": "append_other",
+        "other": "magnet:?xt=urn:btih:"
+      }
     }
   }
 }
