@@ -1,14 +1,14 @@
 {
   "engine_version": 2.2,
   "version": 1.0,
-  "url": "https://audiobookbay.is",
+  "url": "https://audiobookbay.lu",
   "name": "audiobookbay",
   "description": "Parser for ABB",
   "supported_categories": {
     "all": "None"
   },
   "search": {
-    "no_category": "https://audiobookbay.is/page/${page}/?s=${query}",
+    "no_category": "https://audiobookbay.lu/page/${page}/?s=${query}",
     "page_start": 1
   },
   "download": {
@@ -17,7 +17,7 @@
         "regex_use": "first",
         "regexps": [
           {
-            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.is/asbs[^\"]+)",
+            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
             "group": 1,
             "slug_type": "complete"
           }
