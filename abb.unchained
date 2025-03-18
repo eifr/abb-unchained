@@ -17,7 +17,7 @@
         "regex_use": "first",
         "regexps": [
           {
-            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^"]+)",
+            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
             "group": 1,
             "slug_type": "complete"
           }
@@ -46,15 +46,21 @@
           }
         ]
       },
+      "seeders": {
+        "regex_use": "first",
+        "regexps": []
+      },
+      "leechers": {
+        "regex_use": "first",
+        "regexps": []
+      },
       "size": {
         "regex_use": "first",
-        "regexps": [
-          {
-            "regex": "Size:</strong>\\s*<span>([^<]+)</span>",
-            "group": 1,
-            "slug_type": "complete"
-          }
-        ]
+        "regexps": []
+      },
+      "torrents": {
+        "regex_use": "all",
+        "regexps": []
       }
     }
   }
