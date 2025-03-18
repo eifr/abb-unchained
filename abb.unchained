@@ -9,16 +9,23 @@
     "all": "audio books"
   },
   "search": {
-    "no_category": "${url}/?s=${query}"
+    "no_category": "${url}/page/${page}/?s=${query}",
   },
   "download": {
     "regexes": {
+
       "magnet": {
-        "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
-        "group": 1,
-        "slug_type": "append_other",
-        "other": "magnet:?xt=urn:btih:"
-      }
+        "regex_use": "all",
+        "regexps": [
+          {
+            "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
+            "group": 1,
+            "slug_type": "append_other",
+            "other": "magnet:?xt=urn:btih:"
+          }
+        ]
+      },
+
     }
   }
 }
