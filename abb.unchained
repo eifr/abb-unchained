@@ -1,6 +1,6 @@
 {
-  "engine_version": 2.2,
-  "version": 1.0,
+  "engine_version": 2.0,
+  "version": 2.0,
   "url": "https://audiobookbay.lu",
   "name": "audiobookbay",
   "description": "Parser for ABB",
@@ -16,9 +16,9 @@
         "regex_use": "first",
         "regexps": [
           {
-            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
+            "regex": "href=\"(/abss/[^\"]+)",
             "group": 1,
-            "slug_type": "complete"
+            "slug_type": "append_url"
           }
         ]
       }
@@ -28,7 +28,7 @@
         "regex_use": "first",
         "regexps": [
           {
-            "regex": "<h1 itemprop=\"name\">(.*?)</h1>",
+            "regex": "postTitle\"><h1>([^<]+)</h1>",
             "group": 1,
             "slug_type": "complete"
           }
