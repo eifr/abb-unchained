@@ -1,40 +1,26 @@
 {
   "engine_version": 2.0,
   "version": 2.0,
-  "url": "https://audiobookbay.lu",
+  "url": "https://audiobookbay.lu/",
   "name": "audiobookbay",
-  "description": "Parser for ABB",
+  "description": "Parser for audiobookbay",
   "supported_categories": {
-    "all": "None"
+    "all": "all",
+    "anime": "Anime",
+    "software": "Applications",
+    "games": "Games",
+    "movies": "Movies",
+    "music": "Music",
+    "tv": "TV"
   },
   "search": {
+    "category": "${url}/page/${page}/?s=${query}&cat=${category}",
     "no_category": "${url}/page/${page}/?s=${query}",
     "page_start": 1
   },
   "download": {
-    "internal": {
-      "link": {
-        "regex_use": "first",
-        "regexps": [
-          {
-            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
-            "group": 1,
-            "slug_type": "complete"
-          }
-        ]
-      }
-    },
     "regexes": {
-      "name": {
-        "regex_use": "first",
-        "regexps": [
-          {
-            "regex": "<h1 itemprop=\"name\">(.*?)</h1>",
-            "group": 1,
-            "slug_type": "complete"
-          }
-        ]
-      },
+
       "magnet": {
         "regex_use": "all",
         "regexps": [
@@ -46,22 +32,7 @@
           }
         ]
       },
-      "seeders": {
-        "regex_use": "first",
-        "regexps": []
-      },
-      "leechers": {
-        "regex_use": "first",
-        "regexps": []
-      },
-      "size": {
-        "regex_use": "first",
-        "regexps": []
-      },
-      "torrents": {
-        "regex_use": "all",
-        "regexps": []
-      }
+
     }
   }
 }
