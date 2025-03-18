@@ -8,7 +8,7 @@
     "all": "None"
   },
   "search": {
-    "no_category": "https://audiobookbay.lu/?s=${query}"
+    "no_category": "https://audiobookbay.lu/page/${page}/?s=${query}"
   },
   "download": {
     "internal": {
