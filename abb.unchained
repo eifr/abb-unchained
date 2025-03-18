@@ -1,6 +1,6 @@
 {
-  "engine_version": 2.2,
-  "version": 1.0,
+  "engine_version": 2.0,
+  "version": 2.0,
   "url": "https://audiobookbay.lu",
   "name": "audiobookbay",
   "description": "Parser for ABB",
@@ -8,7 +8,7 @@
     "all": "None"
   },
   "search": {
-    "no_category": "https://audiobookbay.lu/page/${page}/?s=${query}",
+    "no_category": "${url}/page/${page}/?s=${query}",
     "page_start": 1
   },
   "download": {
@@ -17,7 +17,7 @@
         "regex_use": "first",
         "regexps": [
           {
-            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
+            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^"]+)",
             "group": 1,
             "slug_type": "complete"
           }
@@ -42,7 +42,17 @@
             "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
             "group": 1,
             "slug_type": "append_other",
-            "other":"magnet:?xt=urn:btih:"
+            "other": "magnet:?xt=urn:btih:"
+          }
+        ]
+      },
+      "size": {
+        "regex_use": "first",
+        "regexps": [
+          {
+            "regex": "Size:</strong>\\s*<span>([^<]+)</span>",
+            "group": 1,
+            "slug_type": "complete"
           }
         ]
       }
