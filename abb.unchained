@@ -1,19 +1,39 @@
 {
-  "engine_version": 2.0,
-  "version": 2.0,
-  "url": "https://audiobookbay.lu/",
+  "engine_version": 2.2,
+  "version": 1.0,
+  "url": "https://audiobookbay.lu",
   "name": "audiobookbay",
-  "author": "eifr",
-  "description": "Parser for audiobookbay",
+  "description": "Parser for ABB",
   "supported_categories": {
-    "all": "audio books"
+    "all": "None"
   },
   "search": {
-    "no_category": "${url}/page/${page}/?s=${query}"
+    "no_category": "https://audiobookbay.lu/?s=${query}"
   },
   "download": {
+    "internal": {
+      "link": {
+        "regex_use": "first",
+        "regexps": [
+          {
+            "regex": "[^<]+<a\\s+href=\"(https://audiobookbay.lu/asbs[^\"]+)",
+            "group": 1,
+            "slug_type": "complete"
+          }
+        ]
+      }
+    },
     "regexes": {
-
+      "name": {
+        "regex_use": "first",
+        "regexps": [
+          {
+            "regex": "<h1 itemprop=\"name\">(.*?)</h1>",
+            "group": 1,
+            "slug_type": "complete"
+          }
+        ]
+      },
       "magnet": {
         "regex_use": "all",
         "regexps": [
@@ -21,7 +41,7 @@
             "regex": "<td>Info Hash:</td>\\s*<td>(.*?)</td>",
             "group": 1,
             "slug_type": "append_other",
-            "other": "magnet:?xt=urn:btih:"
+            "other":"magnet:?xt=urn:btih:"
           }
         ]
       }
